@@ -58,58 +58,11 @@ export default {
           idForTodo: 3,
          editing : null,
           beforeEditCache:'',
-
-          //tu peux effaecer
-             /*    filter: 'all',*/
- /*     todos: [
-            {
-                'id': 1,
-                'titre': 'Tache de test',
-                'completed': false,
-                
-            },{
-                'id': 2,
-                'titre': 'Tache de test 2',
-                'completed': false,
-
-                
-            }
-        ]*/
       }
   },
   computed: {
       ...mapGetters('todos', ['reamaining','anyReamaining','checkAllTodos','get','todosFiltered','showClearCompletedButton'])
       ,
-      //tu peux tout effacer
-      /* reamaining () {
-          return this.todos.filter(todo => !todo.completed).length
-      },
-      anyReamaining () {
-          return this.reamaining != 0
-      },
-      checkAllTodos () {
-          return this.todos.forEach(todo => {
-             // todo.completed = event.target.checked
-              
-          });
-      },
-      get() {
-          return this.reamaining === 0
-      },
-     // todosFiltered () {
-          if (this.filter == 'all') {
-              return this.todos
-          }else if (this.filter == 'todo') {
-              return this.todos.filter(todo => !todo.completed)
-          }else if (this.filter == 'done'){
-              return this.todos.filter(todo => todo.completed)
-          }
-          return this.todos
-      },
-       showClearCompletedButton() {
-           return this.todos.filter(todo => todo.completed).length > 0
-       }*/
-      
       
   },
   directives: {
@@ -122,26 +75,8 @@ export default {
   methods: {
     ...mapActions('todos',['addTodo','clearCompleted','changefilter','removeTodo','doneEdit']),
     
-    //PAS EFFACER checkAlltodos sinon tu peux effacer les commentaires
-    /* addTodo() {
-          if (this.newTodo.trim().length == 0) {
-              return ''
-          }
-            this.$store.commit('addTodo', {
-                id: this.idForTodo,
-                title: this.newTodo,
-                completed: false,
-                
-            })
-
-         /* this.todos.push({
-              id: this.idForTodo,
-              titre: this.newTodo,
-              completed: false
-          })*/
-        /*  this.newTodo = ''
-          this.idForTodo++
-      }*/
+    
+    
       editTodo(todo) {
           
             this.editing = todo
@@ -160,17 +95,11 @@ export default {
           this.editing.name = this.beforeEditCache
           this.editing = null
       },/*
-      removeTodo(index){
-          this.todos.splice(index, 1)*/
-      /*,
+      
       checkAllTodos() {
           this.todos.ForEach((todo) => {todo.completed = event.target.checked})
       }*/
-     /* A EFFACER 
-     clearCompleted() {
-          this.todos = this.todos.filter(todo => !todo.completed)
-      }
-*/
+     
   }
 }
 </script>
