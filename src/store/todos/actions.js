@@ -26,5 +26,3 @@ export function doneEdit({ commit },data){
     });
 }
 */
-
-//ne pas effacer pour montrer qu'on a essayer
